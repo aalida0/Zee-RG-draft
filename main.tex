@@ -35,11 +35,58 @@ where the factor $\tfrac12$ multiplies $\lambda_5$ only. The tadpole conditions 
 \begin{equation}
 m_A^2=M_{H^+}^2+\tfrac12(\lambda_4-\lambda_5)v^2,\qquad M_{22}=m_A^2+\lambda_5v^2,
 \end{equation}
-with $M_{H^+}$ the diagonal $H^+$ mass entry; $H^+$ and $h^+$ mix through $\mu$ into mass eigenstates $h_{1,2}^+$ with mixing angle $\phi$. Given the physical spectrum $\lambda_4$ and $\lambda_5$ are fixed, so freeing $\lambda_4$ changes the splitting between the neutral and charged states.
+with $M_{H^+}^2=\mu_2^2+\tfrac12\lambda_3v^2$ the diagonal $H^+$ mass entry. The CP-even states mix through
+\begin{equation}
+\mathcal M^2_{\rm even}=\begin{pmatrix}\lambda_1v^2&\lambda_6v^2\\ \lambda_6v^2&M_{22}\end{pmatrix},\qquad
+\tan(\beta-\alpha)^{-1}=\frac{c_{\beta-\alpha}}{s_{\beta-\alpha}}=-\frac{\lambda_6v^2}{M_{22}-m_h^2},
+\end{equation}
+and the two charged scalars through
+\begin{align}
+\mathcal M^2_{\pm}&=\begin{pmatrix}M_{H^+}^2&\mu v/\sqrt2\\ \mu v/\sqrt2&M_{33}^2\end{pmatrix},\qquad
+\sin2\varphi=\frac{\sqrt2\,\mu v}{m^2_{h_2^+}-m^2_{h_1^+}},\nonumber\\
+m^2_{h_{1,2}^+}&=\tfrac12\Big[M_{H^+}^2+M_{33}^2\mp\sqrt{(M_{H^+}^2-M_{33}^2)^2+2\mu^2v^2}\Big],
+\label{eq:charged}
+\end{align}
+with $M_{33}^2=\mu_h^2+\tfrac12\lambda_8v^2$, $h_1^+=\cos\varphi\,H^++\sin\varphi\,h^+$ and $h_2^+=\cos\varphi\,h^+-\sin\varphi\,H^+$. We parametrise the trilinear coupling as $\mu=\sqrt2\,u\,M_{H^+}M_{33}/v$ with $0\le u<1$, which guarantees $m^2_{h_1^+}>0$. Given the physical spectrum $\lambda_4$ and $\lambda_5$ are fixed, so freeing $\lambda_4$ changes the splitting between the neutral and charged states.
+
+\paragraph{Yukawa sector.} In the generic basis the leptonic Yukawa Lagrangian is
+\begin{equation}
+-\mathcal L_Y=\bar L\,(Y_1\Phi_1+Y_2\Phi_2)\,e_R+\overline{\tilde L}\,f\,L\,h^++\text{h.c.},
+\end{equation}
+with $f$ antisymmetric (HG normalisation; a factor $2f$ appears in some codes) and $\tan\beta=v_2/v_1$. In the charged-lepton mass basis $Y_1$ is eliminated by $m_E=v(c_\beta Y_1+s_\beta Y_2)/\sqrt2$, and the second Higgs-basis doublet couples through (with $Y_2$ in HG's index convention, as in Eq.~\eqref{eq:mnu})
+\begin{equation}
+D=-\sqrt2\tan\beta\,\frac{m_E}{v}+\frac{Y_2^\dagger}{\cos\beta},
+\end{equation}
+Writing $-\mathcal L\supset\bar e_L\Lambda^\varphi e_R\,\varphi+\text{h.c.}$ for $\varphi=h,H,A$,
+\begin{equation}
+\Lambda^h=s_{\beta-\alpha}\frac{m_E}{v}+c_{\beta-\alpha}\frac{D}{\sqrt2},\qquad
+\Lambda^H=c_{\beta-\alpha}\frac{m_E}{v}-s_{\beta-\alpha}\frac{D}{\sqrt2},\qquad
+\Lambda^A=\frac{iD}{\sqrt2},
+\label{eq:lambdas}
+\end{equation}
+so the off-diagonal entries of $D$ generate tree-level flavour-changing neutral couplings. The quark couplings are those of a type-I model with $\cot\beta_{\rm I}=\tan\beta$: the top couples to $h$, $H$, $A$ with $\kappa_h=s_{\beta-\alpha}-\tan\beta\,c_{\beta-\alpha}$, $\kappa_H=c_{\beta-\alpha}+\tan\beta\,s_{\beta-\alpha}$ and $\kappa_A=\tan\beta$ (times $\gamma_5$) in units of the Standard-Model Yukawa.
+
+\paragraph{Neutrino masses.} The one-loop Majorana mass matrix, at leading order in $m_\ell^2/m_{h^+}^2$, is (HG Eqs.~(2.30)--(2.31))
+\begin{equation}
+M_\nu=\frac{\sin2\varphi\,\tan\beta}{8\sqrt2\,\pi^2 v}\ln\frac{m^2_{h_2^+}}{m^2_{h_1^+}}\Big[f\,m_E^2+m_E^2f^T-\frac{v}{\sqrt2\,s_\beta}\big(f\,m_E\,Y_2+Y_2^T\,m_E\,f^T\big)\Big],
+\label{eq:mnu}
+\end{equation}
+diagonalised as $M_\nu=U^*\mathrm{diag}(m_1,m_2,m_3)U^\dagger$; $U$ is the PMNS matrix since $m_E$ is diagonal. The exact lepton-mass dependence of the loop function agrees with Eq.~\eqref{eq:mnu} to $10^{-3}$ for charged-scalar masses well above $m_\tau$ (unit test). The effective masses are $m_{\beta\beta}=|(M_\nu)_{ee}|$ and $m_\beta^2=\sum_i|U_{ei}|^2m_i^2$.
 
 \paragraph{Bases.} The scalar potential, the quartics $\lambda_1,\dots,\lambda_{10},\lambda_h$ and the masses are defined in the Higgs basis, in which only $H_1$ has a vacuum expectation value, as in HG (their Eq.~(2.3)). The angle $\beta$ enters only the Yukawa sector: $Y_2$ is the generic-basis matrix of HG's Eq.~(2.15), the charged-lepton mass fixes $Y_1$, and the nonstandard Higgs-basis coupling is $Y_2^\dagger/\cos\beta-\sqrt2\,m_\ell\tan\beta/v$, so $\tan\beta$ is fixed physically by the $\tau$ Yukawa coupling and not by the potential. Quarks couple only to $\Phi_1$ in the generic basis (HG's $Y_{u2}=Y_{d2}=0$), which gives the top quark a coupling $\rho_t=-y_t\tan\beta$ to $H_2$ in the Higgs basis; it enters the RG analysis in Sec.~\ref{sec:rg}. The condition $m_h=125.5$~GeV is imposed as the lighter eigenvalue of the CP-even matrix with off-diagonal entry $\lambda_6v^2$, i.e.\ $\lambda_1v^2=m_h^2s_{\beta-\alpha}^2+m_H^2c_{\beta-\alpha}^2$, not as $\lambda_1=m_h^2/v^2$.
 
-\paragraph{Slice.} Following HG we set $f_{e\mu}=0$, $Y_2^{ee,e\mu,\mu e,\mu\mu}=0$, take $f$ and $Y_2^{e\tau}$ real, put $\lambda_7=\lambda_8=\lambda_9=\lambda_{10}=\lambda_h=0$ in the low-energy fit and fix $\lambda_2=\sqrt{4\pi}$. The new element here is that $\lambda_4$ is a free parameter with $|\lambda_4|\le\sqrt{4\pi}$. The fit has 19 parameters: $f_{e\tau},f_{\mu\tau}$, nine real components of $Y_2$, $\tan\beta$, two mass parameters, the mixing, and $\lambda_3,\lambda_4,\lambda_5,\lambda_6$. The Higgs mass fixes $\lambda_1$.
+\paragraph{Slice.} Following HG we set $f_{e\mu}=0$, $Y_2^{ee,e\mu,\mu e,\mu\mu}=0$, take $f$ and $Y_2^{e\tau}$ real, put $\lambda_7=\lambda_8=\lambda_9=\lambda_{10}=\lambda_h=0$ in the low-energy fit and fix $\lambda_2=\sqrt{4\pi}$. The new element here is that $\lambda_4$ is a free parameter with $|\lambda_4|\le\sqrt{4\pi}$. The fit has 19 parameters (Table~\ref{tab:pars}). The Higgs mass fixes $\lambda_1$ through the CP-even mass matrix above.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lll}\toprule
+Parameter & Range & Sampling variable\\\midrule
+$f_{e\tau},\,f_{\mu\tau}$ & $|x|\le0.1$ & $x=10^{-6}\sinh z$\\
+$Y_2^{e\tau}$ (real); $Y_2^{\tau\tau},Y_2^{\tau\mu},Y_2^{\tau e},Y_2^{\mu\tau}$ (complex) & $|\mathrm{Re}|,|\mathrm{Im}|\le0.1$ & $x=10^{-6}\sinh z$\\
+$\tan\beta$ & $0.3$--$50$ & $\ln\tan\beta$\\
+$M_{H^+}$, $M_{33}$ & $100$~GeV--$20$~TeV & $\log_{10}M$\\
+$u$ (trilinear, Eq.~\eqref{eq:charged}) & $0$--$0.999$ & linear\\
+$\lambda_3,\lambda_4,\lambda_5,\lambda_6$ & $|\lambda|\le\sqrt{4\pi}$ & linear\\\bottomrule
+\end{tabular}\caption{Fit parameters on the slice. The relaxed texture of Sec.~\ref{sec:res} adds $f_{e\mu}$ and complex $Y_2^{ee},Y_2^{e\mu},Y_2^{\mu e},Y_2^{\mu\mu}$.}\label{tab:pars}\end{table}
 
 \section{Observables and inputs}\label{sec:obs}
 \paragraph{Neutrino sector.} Neutrino masses are evaluated at leading order in the Zee loop as in HG, with $f$ and $Y_2$ related to the oscillation parameters through the charged-lepton masses. The oscillation likelihood is the NuFIT~6.1 $\chi^2$ table~\cite{Esteban:2024eli} we use the variant with the tabulated Super-Kamiokande atmospheric $\Delta\chi^2$ (file label \texttt{TByes}). Only the released one- and two-dimensional projections are available, so the correlations are rebuilt from the $(\theta_{23},\Delta m^2_{3\ell},\delta_{CP})$ three-dimensional table plus two-dimensional corrections by inclusion--exclusion; residual correlations of $\theta_{12},\theta_{13}$ with $\Delta m^2_{3\ell}$ and $\delta_{CP}$ are dropped, so this is not a profile of the full likelihood; the lightest-neutrino mass follows from the fit. We add $\sum m_\nu<0.072$~eV (DESI BAO with CMB, $\Lambda$CDM; the DESI 2024 value~\cite{DESI:2024vi}; the DR2 combination gives the slightly stronger $0.0642$~eV~\cite{Elbers:2025vlz}, and imposing it as a hard cut on the final region leaves the mass range unchanged (about $0.27$--$3.4$~TeV) and removes one third of the points) and $m_\beta<0.45$~eV (KATRIN)~\cite{KATRIN:2024cdt}. The DESI bound is model dependent; the ordering conclusion depends on it.
@@ -48,7 +95,32 @@ with $M_{H^+}$ the diagonal $H^+$ mass entry; $H^+$ and $h^+$ mix through $\mu$ 
 \begin{equation}
 \Br(\ell_i\to\ell_j\gamma)=\Br(\ell_i\to\ell_j\nu\bar\nu)\,\frac{48\pi^3\alpha}{G_F^2}\big(|C_L|^2+|C_R|^2\big),
 \end{equation}
-(with the branching ratio factor $=1$ for $\mu\to e\gamma$) where the dipole coefficients include the neutral-scalar loops (Barr--Zee-type functions for the diagonal moments) and the charged-scalar loops with $f$ and $Y_2$. We include $\Br(\tau\to3\mu)$ and $\Br(\tau\to\mu\mu e)$ from tree-level neutral-scalar exchange and the usual dipole terms. For $\mu\to3e$, which vanishes at tree level on this slice since $Y_2^{ee}=Y_2^{\mu e}=0$, we use the dipole-dominated estimate $\Br(\mu\to3e)\simeq\frac{\alpha}{3\pi}\big[\ln(m_\mu^2/m_e^2)-\tfrac{11}{4}\big]\Br(\mu\to e\gamma)$~\cite{Kuno:1999jp}. Adding the photon-penguin four-fermion contribution (same loop as the conversion monopole, $\Br\simeq\tilde C^2/(32G_F^2)$) changes it by less than $2\%$ of the dipole value for $98\%$ of the region and leaves the fraction above $10^{-16}$ at $15.7\%$ (sub-sample estimate); the estimate is therefore adequate for the reach statements, but not a full calculation. For $\mu$--$e$ conversion we use the photon-penguin (monopole) term from neutral-scalar loops with a $\tau$ in the loop plus the dipole-dominance term $\mathrm{CR}\supset 2.7\times10^{-3}\,\Br(\mu\to e\gamma)$ for Al ($3.9\times10^{-3}$ for Au), which follows from the overlap integrals and capture rates of Ref.~\cite{Kitano:2002mt}. We re-derived the monopole term independently with Feynman parameters: for a neutral scalar of mass $M$ and a lepton of mass $m_\tau$ in the loop the charge-radius coefficient is $-|y|^2(4+3\ln x)/(144\pi^2M^2)$ with $x=m_\tau^2/M^2$, which reproduces the loop function printed in HG (checked numerically, ratio $1+O(x)$), and the vector four-fermion coefficient on a proton is $\tilde C=4\pi\alpha A_1$. With the normalisation of Ref.~\cite{Kitano:2002mt} this gives $\mathrm{CR}=V_p^2\tilde C^2/(4\Gamma_{\rm capt})$ per chirality, i.e.\ a coupling $g_{LV}=\tilde C/2$, a factor $4$ smaller than the expression printed in HG (their Eq.~(3.25)), so $\mathrm{CR}$ is $16$ times smaller. We could not identify a convention difference in the published text; we adopt the independent result, and note that HG's own scan is unaffected since the monopole term is far below the SINDRUM~II limit. For aluminium $V_p=0.0161\,m_\mu^{5/2}$ and $\Gamma_{\rm capt}=0.7054\times10^6~\mathrm{s^{-1}}$ give $\mathrm{CR}_{\rm Al}=0.51\,\mathrm{CR}_{\rm Au}$, consistent with HG's footnote. Muonium--antimuonium conversion requires $(Y_2^{e\mu})^2$ at tree level and vanishes on this slice.
+(with the branching ratio factor $=1$ for $\mu\to e\gamma$). For $\ell_j\to\ell_i\gamma$ the one-loop neutral-scalar contribution, dominated by a $\tau$ in the loop, and the charged-scalar contribution are
+\begin{align}
+C_R^{(0)}&=\frac{1}{16\pi^2}\sum_{\varphi}\frac{m_\tau}{m_j}\frac{\Lambda^\varphi_{i\tau}\Lambda^\varphi_{\tau j}}{m_\varphi^2}\Big(\ln\frac{m_\varphi^2}{m_\tau^2}-\frac32\Big),\nonumber\\
+C_L^{(0)}&=C_R^{(0)}\big|_{\Lambda\to\Lambda^\dagger}\;\Big(+\frac{1}{96\pi^2}\sum_\varphi\frac{\Lambda^{\varphi\dagger}_{i\tau}\Lambda^\varphi_{\tau\tau}}{m_\varphi^2}\ \text{for}\ j=\tau\Big),\nonumber\\
+C_L^{(+)}&=-\frac{1}{192\pi^2}\Big(\frac{\cos^2\varphi}{m^2_{h_1^+}}+\frac{\sin^2\varphi}{m^2_{h_2^+}}\Big)(D^\dagger D)_{ij},\nonumber\\
+C_R^{(+)}&=-\frac{1}{192\pi^2}\Big(\frac{\sin^2\varphi}{m^2_{h_1^+}}+\frac{\cos^2\varphi}{m^2_{h_2^+}}\Big)(4f^\dagger f)_{ij},
+\label{eq:dipole}
+\end{align}
+to which we add the two-loop Barr--Zee terms with a top quark and a $W$ in the loop, in the form given by HG. The same coefficients with $i=j$ give $\Delta a_\ell=2m_\ell^2\,\mathrm{Re}\,C_R$ and $d_\ell=e\,m_\ell\,\mathrm{Im}\,C_R$. Tree-level neutral-scalar exchange gives the trilepton decays. With $v^\varphi_R(ab)=\Lambda^\varphi_{ab}$, $v^\varphi_L(ab)=\Lambda^{\varphi*}_{ba}$ and $C_{XY}=\sum_\varphi v^\varphi_X(j\,I)\,v^\varphi_Y(j\,j)/m_\varphi^2$,
+\begin{equation}
+\Br(\ell_I\to3\ell_j)=\frac{\Br(\ell_I\to\ell_j\nu\bar\nu)}{128\,G_F^2}\Big(\tfrac12|C_{LL}|^2+\tfrac12|C_{RR}|^2+|C_{LR}|^2+|C_{RL}|^2\Big),
+\label{eq:l3}
+\end{equation}
+which reproduces HG's Eq.~(3.9) for $\tau\to3\mu$ on the slice (unit test); $\tau\to\mu\mu e$ is taken from HG. For $\mu\to3e$, which vanishes at tree level on this slice since $Y_2^{ee}=Y_2^{\mu e}=0$, we use the dipole-dominated estimate $\Br(\mu\to3e)\simeq\frac{\alpha}{3\pi}\big[\ln(m_\mu^2/m_e^2)-\tfrac{11}{4}\big]\Br(\mu\to e\gamma)$~\cite{Kuno:1999jp}. Adding the photon-penguin four-fermion contribution (same loop as the conversion monopole, $\Br\simeq\tilde C^2/(32G_F^2)$) changes it by less than $2\%$ of the dipole value for $98\%$ of the region and leaves the fraction above $10^{-16}$ at $15.7\%$ (sub-sample estimate); the estimate is therefore adequate for the reach statements, but not a full calculation. For $\mu$--$e$ conversion in a nucleus $N$ we write
+\begin{equation}
+\begin{gathered}
+\mathrm{CR}_N=\frac{\omega_{\rm mono}+\omega_{\rm dip}+\omega_{S}}{\Gamma_{\rm capt}^N},\qquad
+\omega_S=2G_F^2\big(|\tilde g_{LS}|^2+|\tilde g_{RS}|^2\big)\big(S^{(p)}_N+S^{(n)}_N\big)^2,\\
+\tilde g_{LS}=\frac{\sqrt2}{G_F}\sum_{\varphi=h,H}\frac{\Lambda^\varphi_{e\mu}\,\kappa_\varphi\,m_Nf_N}{v\,m_\varphi^2},
+\end{gathered}\label{eq:cr}
+\end{equation}
+($\tilde g_{RS}$ with $\Lambda^{\varphi*}_{\mu e}$, $f_N=0.30$, overlap integrals $S$ of Ref.~\cite{Kitano:2002mt} in units of $m_\mu^{5/2}$), adding the three terms incoherently. The scalar term vanishes on the slice. For the monopole we use the photon-penguin term from neutral-scalar loops with a $\tau$ in the loop plus the dipole-dominance term $\mathrm{CR}\supset 2.7\times10^{-3}\,\Br(\mu\to e\gamma)$ for Al ($3.9\times10^{-3}$ for Au), which follows from the overlap integrals and capture rates of Ref.~\cite{Kitano:2002mt}. We re-derived the monopole term independently with Feynman parameters: for a neutral scalar of mass $M$ and a lepton of mass $m_\tau$ in the loop the charge-radius coefficient is $-|y|^2(4+3\ln x)/(144\pi^2M^2)$ with $x=m_\tau^2/M^2$, which reproduces the loop function printed in HG (checked numerically, ratio $1+O(x)$), and the vector four-fermion coefficient on a proton is $\tilde C=4\pi\alpha A_1$. With the normalisation of Ref.~\cite{Kitano:2002mt} this gives $\mathrm{CR}=V_p^2\tilde C^2/(4\Gamma_{\rm capt})$ per chirality, i.e.\ a coupling $g_{LV}=\tilde C/2$, a factor $4$ smaller than the expression printed in HG (their Eq.~(3.25)), so $\mathrm{CR}$ is $16$ times smaller. We could not identify a convention difference in the published text; we adopt the independent result, and note that HG's own scan is unaffected since the monopole term is far below the SINDRUM~II limit. For aluminium $V_p=0.0161\,m_\mu^{5/2}$ and $\Gamma_{\rm capt}=0.7054\times10^6~\mathrm{s^{-1}}$ give $\mathrm{CR}_{\rm Al}=0.51\,\mathrm{CR}_{\rm Au}$, consistent with HG's footnote. Muonium--antimuonium conversion requires $(Y_2^{e\mu})^2$ at tree level and vanishes on this slice. The lepton-flavour-violating Higgs decays are
+\begin{equation}
+\Gamma(h\to\ell_i^\pm\ell_j^\mp)=\frac{m_h}{8\pi}\big(|\Lambda^h_{ij}|^2+|\Lambda^h_{ji}|^2\big),\qquad \Br=\frac{\Gamma}{\Gamma_h^{\rm SM}+\Gamma},
+\end{equation}
+with $\Gamma_h^{\rm SM}=4.07$~MeV.
 
 \paragraph{Dipole moments.} The electron and muon electric dipole moments, $|d_e|<8.7\times10^{-29}~e\,\mathrm{cm}$ and $|d_\mu|<10^{-19}~e\,\mathrm{cm}$, and the electron anomalous magnetic moment ($\Delta a_e<2\times10^{-12}$) enter the fit as one-sided penalties; $\Delta a_\mu$ is compared with the Standard-Model value of Ref.~\cite{Aliberti:2025beg}. We do not require the model to explain either anomaly.
 
@@ -67,12 +139,39 @@ $\Delta a_\mu=a_\mu^{\rm exp}-a_\mu^{\rm SM}$ & $(38\pm63)\times10^{-11}$ & \cit
 \end{tabular}\caption{Main experimental inputs (modern set).}\label{tab:inputs}\end{table}
 
 \section{Fit procedure}\label{sec:fit}
-Couplings span many orders of magnitude, so we parametrise $f$ and $Y_2$ components as $x=10^{-6}\sinh z$ with $|x|\le0.1$ and minimise the $\chi^2$ with a multi-start least-squares algorithm; hinge terms represent one-sided limits. Starting points include optimiser output from many random starts and samples from nested-sampling runs. The allowed region is the set of points with $\Delta\chi^2\le3.84$ above the minimum, sampled by adaptive random walks started from the best seeds. We report \emph{profile-style} ranges (extremal values over the region). Nested sampling with HG-style log-uniform priors did not converge: two runs with 300 and 800 live points gave log-evidence differing by $4.6$ and a heavy-scalar-mass upper edge that moved from $2.2$ to $3.5$~TeV, indicating a multimodal posterior. We therefore quote no credible intervals and do not compare mass ranges with the Bayesian intervals of HG. \todo{prior-matched, converged sampler (many independent runs on Condor) if credible intervals are wanted}
+The likelihood is
+\begin{equation}
+\begin{split}
+\chi^2={}&\chi^2_\nu+\sum_k\theta(O_k-B_k)\Big(\frac{O_k}{B_k}\Big)^2+\sum_{a}\Big(\frac{R_a-R_a^{\rm exp}}{\sigma_a}\Big)^2\\
+&+\chi^2_{STU}+\chi^2_h+\Big(\frac{\Delta a_\mu-\Delta a_\mu^{\rm exp}}{\sigma_{a_\mu}}\Big)^2+\chi^2_{\rm pen},
+\end{split}\label{eq:chi2}
+\end{equation}
+where $\chi^2_\nu$ is the NuFIT term, $O_k$ the CLFV rates, dipole moments and neutrino-mass observables with one-sided limits $B_k=\text{limit}/1.645$ (90\%~CL) or $/1.949$ (95\%~CL), $R_a$ the universality ratios, $\chi^2_{STU}$ the correlated oblique-parameter term, $\chi^2_h$ the Gaussian Higgs signal strengths, and $\chi^2_{\rm pen}$ hinge penalties for masses below $100$~GeV, $|\lambda_i|>\sqrt{4\pi}$ and the HG boundedness conditions at the starting scale. Couplings span many orders of magnitude, so we parametrise $f$ and $Y_2$ components as $x=10^{-6}\sinh z$ with $|x|\le0.1$ and minimise the $\chi^2$ with a multi-start least-squares algorithm; hinge terms represent one-sided limits. Starting points include optimiser output from many random starts and samples from nested-sampling runs. The allowed region is the set of points with $\Delta\chi^2\le3.84$ above the minimum, sampled by adaptive random walks started from the best seeds. We report \emph{profile-style} ranges (extremal values over the region). Nested sampling with HG-style log-uniform priors did not converge: two runs with 300 and 800 live points gave log-evidence differing by $4.6$ and a heavy-scalar-mass upper edge that moved from $2.2$ to $3.5$~TeV, indicating a multimodal posterior. We therefore quote no credible intervals and do not compare mass ranges with the Bayesian intervals of HG. \todo{prior-matched, converged sampler (many independent runs on Condor) if credible intervals are wanted}
 
 \section{RG evolution and stability}\label{sec:rg}
-We evolve the Yukawas with the one-loop Machacek--Vaughn equations~\cite{Machacek:1983tz} written for the full scalar and fermion content and verified against the tensor form; in the region of interest the lepton-Yukawa running is negligible (all test points remain perturbative to $10^{19}$~GeV and radiatively regenerated texture zeros are $\lesssim2\times10^{-4}$). The quartics are different. HG scan $\lambda_2$ over $[10^{-5},\sqrt{4\pi}]$; in our low-energy fit $\lambda_2$ plays no role and is fixed at $\sqrt{4\pi}$, a value for which the quartic reaches a Landau pole near $1$~TeV, so in the stability analysis $\lambda_2$ is a free parameter of the inner search (Sec.~\ref{sec:rg}). HG state that their Eq.~(3.3), $2|\lambda_6+\lambda_7|<\frac{\lambda_1+\lambda_2}{2}+\lambda_3+\lambda_4+\lambda_5$, together with Eqs.~(3.1) and (3.2), is necessary and sufficient for boundedness from below. It is not when $\lambda_6\ne0$. Along $H_2=tH_1$, $h^+=0$ with real $t$ the quartic form is $\frac{\lambda_1}{2}+2\lambda_6t+(\lambda_3+\lambda_4+\lambda_5)t^2+2\lambda_7t^3+\frac{\lambda_2}{2}t^4$ (in units of $|H_1|^4$). For $\lambda_1=0.26$, $\lambda_2=3.54$, $\lambda_6=0.8$ and all other quartics zero, Eq.~(3.3) is satisfied ($1.6<1.9$) but the form equals $-0.34$ at $t=-0.3$, and our numerical minimiser finds $-0.36$ over all field directions. This counterexample is not a viable phenomenological point; it shows that the $\lambda_6$ condition is insufficient, and we therefore test boundedness by direct numerical minimisation of the quartic form on gauge-orbit representatives.
+We evolve the Yukawas with the one-loop Machacek--Vaughn equations~\cite{Machacek:1983tz} written for the full scalar and fermion content and verified against the tensor form; in the region of interest the lepton-Yukawa running is negligible (all test points remain perturbative to $10^{19}$~GeV and radiatively regenerated texture zeros are $\lesssim2\times10^{-4}$). The quartics are different. HG scan $\lambda_2$ over $[10^{-5},\sqrt{4\pi}]$; in our low-energy fit $\lambda_2$ plays no role and is fixed at $\sqrt{4\pi}$, a value for which the quartic reaches a Landau pole near $1$~TeV, so in the stability analysis $\lambda_2$ is a free parameter of the inner search (Sec.~\ref{sec:rg}). HG state that their Eq.~(3.3), $2|\lambda_6+\lambda_7|<\frac{\lambda_1+\lambda_2}{2}+\lambda_3+\lambda_4+\lambda_5$, together with Eqs.~(3.1) and (3.2), is necessary and sufficient for boundedness from below. It is not when $\lambda_6\ne0$. Along $H_2=tH_1$, $h^+=0$ with real $t$ the quartic form is $\frac{\lambda_1}{2}+2\lambda_6t+(\lambda_3+\lambda_4+\lambda_5)t^2+2\lambda_7t^3+\frac{\lambda_2}{2}t^4$ (in units of $|H_1|^4$). For $\lambda_1=0.26$, $\lambda_2=3.54$, $\lambda_6=0.8$ and all other quartics zero, Eq.~(3.3) is satisfied ($1.6<1.9$) but the form equals $-0.34$ at $t=-0.3$, and our numerical minimiser finds $-0.36$ over all field directions. This counterexample is not a viable phenomenological point; it shows that the $\lambda_6$ condition is insufficient, and we therefore test boundedness exactly. With $x=|H_1|^2$, $y=|H_2|^2$, $z=H_1^\dagger H_2$ ($|z|^2\le xy$) and $s=|h^+|^2$ the quartic part of the potential is
+\begin{equation}
+V_4=V_2(x,y,z)+B\,s+\lambda_hs^2,\qquad B=\lambda_8x+\lambda_9y+2\,\mathrm{Re}(\lambda_{10}z),
+\end{equation}
+where $V_2$ is the two-doublet quartic form. For $\lambda_h>0$ the minimum over $s\ge0$ is
+\begin{equation}
+V_{\rm red}=V_2-\frac{\min(0,B)^2}{4\lambda_h},
+\label{eq:vred}
+\end{equation}
+and the potential is bounded from below if and only if $V_{\rm red}\ge0$ on the compact set $x=a$, $y=1-a$, $z=\sqrt{a(1-a)}\,\rho\,e^{i\phi}$ with $a,\rho\in[0,1]$. We find the minimum on a grid of $81\times41\times72$ points followed by local refinement; this agrees with direct minimisation over all ten real field directions on every test point.
 
-For each point of the allowed region we therefore search for a UV completion of the \emph{unconstrained} quartics. We draw 400 candidates for $(\lambda_2,\lambda_7,\lambda_8,\lambda_9,\lambda_{10},\lambda_h)$, keep those consistent with the $h\to\gamma\gamma$ rate, and evolve all eleven quartics together with the gauge couplings and $y_t$ using a closed-form one-loop system (agreeing with the full tensor evolution to $\sim1\%$). A point is called stable to scale $\Lambda$ if at least one candidate stays perturbative ($|\lambda_i|<4\pi$), satisfies tree-level perturbative unitarity and is bounded from below at all scales up to $\Lambda$, and if with this candidate the electroweak vacuum is the global minimum of the tree-level potential at the starting scale. This is an existence statement. The search strategy and its refinements are described in Sec.~\ref{sec:res}; the sensitivity to the gauge and top inputs is discussed in Sec.~\ref{sec:disc}.
+\paragraph{Unitarity and the global minimum.} For the ten canonically normalised real scalar fields $\phi_a$ the $s$-wave amplitudes of the $55$ two-particle states $|ab\rangle$ ($a\le b$) at high energy are
+\begin{equation}
+\mathcal M_{(ab),(cd)}=-N_{ab}N_{cd}\,\frac{\partial^4V_4}{\partial\phi_a\partial\phi_b\partial\phi_c\partial\phi_d},\qquad N_{ab}=\begin{cases}1/\sqrt2&a=b\\1&a\neq b\end{cases},
+\label{eq:unit}
+\end{equation}
+and we require all eigenvalues to satisfy $|\Lambda_i|<8\pi$ (i.e.\ $|a_0|<1/2$). The fourth derivatives are computed exactly by polarisation of the quartic form; in the two-doublet limit the largest eigenvalue reproduces $\tfrac32(\lambda_1+\lambda_2)+\big[\tfrac94(\lambda_1-\lambda_2)^2+(2\lambda_3+\lambda_4)^2\big]^{1/2}$. For the vacuum we evaluate the full tree-level potential, with $\mu_1^2=-\lambda_1v^2/2$, $\mu_2^2=M_{H^+}^2-\lambda_3v^2/2$, $\mu_3^2=\lambda_6v^2/2$, $\mu_h^2=M_{33}^2-\lambda_8v^2/2$ and the trilinear term, and require that no minimum found from 80 random starting points (field values $0.1$--$30\,v$) lies below $V_{\rm EW}=-\lambda_1v^4/8$.
+
+\paragraph{Evolution.} For each point of the allowed region we search for a UV completion of the \emph{unconstrained} quartics $(\lambda_2,\lambda_7,\lambda_8,\lambda_9,\lambda_{10},\lambda_h)$, keeping only candidates consistent with the $h\to\gamma\gamma$ rate (the charged scalars contribute through $\lambda_{8,10}$ and $\mu$). All eleven quartics are evolved with
+\begin{equation}
+16\pi^2\frac{d\lambda_i}{dt}=\sum_{jk}A_{ijk}\lambda_j\lambda_k+\big(y_t^2B^{t}_{ij}+g_1^2B^{1}_{ij}+g_2^2B^{2}_{ij}\big)\lambda_j+C^{11}_ig_1^4+C^{12}_ig_1^2g_2^2+C^{22}_ig_2^4+C^t_iy_t^4,
+\end{equation}
+whose coefficients are extracted from the general one-loop formula of Machacek and Vaughn applied to the Zee scalar tensor; the resulting $\beta$ functions are listed in Appendix~\ref{app:rge} and reproduce the known two-Higgs-doublet ones. The gauge couplings run with $b=(22/3,-3,-7)$ and the top Yukawa with $16\pi^2\,dy_t/dt=y_t\big[\tfrac92y_t^2(1+r^2)-8g_3^2-\tfrac94g_2^2-\tfrac{17}{12}g_1^2\big]$, where $r=\rho_t/y_t=-\tan\beta$ is constant at one loop; the $\rho_t$ terms in the quartic equations follow from the same general formula with the top coupled to both doublets. A point is called stable to scale $\Lambda$ if at least one candidate stays perturbative ($|\lambda_i|<4\pi$), satisfies tree-level perturbative unitarity and is bounded from below at all scales up to $\Lambda$, and if with this candidate the electroweak vacuum is the global minimum of the tree-level potential at the starting scale. This is an existence statement. The search strategy and its refinements are described in Sec.~\ref{sec:res}; the sensitivity to the gauge and top inputs is discussed in Sec.~\ref{sec:disc}.
 
 \section{Results}\label{sec:res}
 \paragraph{Ordering.} The lowest $\chi^2$ found is $9.8$ for normal ordering (NO) and $29.1$ for inverted ordering (IO), so IO is disfavoured by $\Delta\chi^2\simeq19$; the gap comes from the oscillation data and from the DESI $\sum m_\nu$ bound, which we separate in Table~\ref{tab:ord}: on the HG slice ($\lambda_4=0$, refits from 120 seeds per ordering) the oscillation $\chi^2$ alone prefers NO by $\Delta\chi^2=10.0$, adding the laboratory constraints leaves $10.4$, and the DESI bound adds a further $\simeq12$. The NuFIT table itself, without the Zee texture, prefers NO by $5.9$, so the texture of the Zee mass matrix strengthens the preference by about $4$ units independently of cosmology; the remaining part is the $\Lambda$CDM-dependent cosmological bound. The IO region is very narrow: $\Br(\tau\to\mu\gamma)=\numrange{4.6e-9}{1.6e-8}$, $m_A=220$--$440$~GeV, $\tan\beta\simeq0.3$ (the edge of the prior). Below we show NO.
@@ -182,6 +281,45 @@ On the Herrero-Garc\'ia slice, extended by a free $\lambda_4$, the Zee model sti
 \section*{Acknowledgements}\todo{acknowledgements}
 
 \appendix
+\section{One-loop $\beta$ functions of the quartics}\label{app:rge}
+With $t=\ln\mu$ and $\rho_t=0$ (the $\rho_t$ terms are included numerically), $16\pi^2\,d\lambda_i/dt=\beta_i$ with
+\begin{align}
+\beta_{1}&=12\lambda_1^2  +4\lambda_3^2  +4\lambda_3\lambda_4  +2\lambda_4^2  +2\lambda_5^2  +24\lambda_6^2  +2\lambda_8^2 \nonumber\\
+&\quad +12y_t^2\lambda_1  -3g_1^2\lambda_1  -9g_2^2\lambda_1  +\tfrac{3}{4}g_1^4  +\tfrac{3}{2}g_1^2g_2^2  +\tfrac{9}{4}g_2^4  -12y_t^4\\
+\beta_{2}&=12\lambda_2^2  +4\lambda_3^2  +4\lambda_3\lambda_4  +2\lambda_4^2  +2\lambda_5^2  +24\lambda_7^2  +2\lambda_9^2 \nonumber\\
+&\quad -3g_1^2\lambda_2  -9g_2^2\lambda_2  +\tfrac{3}{4}g_1^4  +\tfrac{3}{2}g_1^2g_2^2  +\tfrac{9}{4}g_2^4\\
+\beta_{3}&=6\lambda_1\lambda_3  +2\lambda_1\lambda_4  +6\lambda_2\lambda_3  +2\lambda_2\lambda_4  +4\lambda_3^2  +2\lambda_4^2  +2\lambda_5^2 \nonumber\\
+&\quad +4\lambda_6^2  +16\lambda_6\lambda_7  +4\lambda_7^2  +2\lambda_8\lambda_9  +6y_t^2\lambda_3  -3g_1^2\lambda_3  -9g_2^2\lambda_3 \nonumber\\
+&\quad +\tfrac{3}{4}g_1^4  -\tfrac{3}{2}g_1^2g_2^2  +\tfrac{9}{4}g_2^4\\
+\beta_{4}&=2\lambda_1\lambda_4  +2\lambda_2\lambda_4  +8\lambda_3\lambda_4  +4\lambda_4^2  +8\lambda_5^2  +10\lambda_6^2  +4\lambda_6\lambda_7 \nonumber\\
+&\quad +10\lambda_7^2  +2\lambda_{10}^2  +6y_t^2\lambda_4  -3g_1^2\lambda_4  -9g_2^2\lambda_4  +3g_1^2g_2^2\\
+\beta_{5}&=2\lambda_1\lambda_5  +2\lambda_2\lambda_5  +8\lambda_3\lambda_5  +12\lambda_4\lambda_5  +10\lambda_6^2  +4\lambda_6\lambda_7  +10\lambda_7^2 \nonumber\\
+&\quad +2\lambda_{10}^2  +6y_t^2\lambda_5  -3g_1^2\lambda_5  -9g_2^2\lambda_5\\
+\beta_{6}&=12\lambda_1\lambda_6  +6\lambda_3\lambda_6  +6\lambda_3\lambda_7  +8\lambda_4\lambda_6  +4\lambda_4\lambda_7  +10\lambda_5\lambda_6  +2\lambda_5\lambda_7 \nonumber\\
+&\quad +2\lambda_8\lambda_{10}  +9y_t^2\lambda_6  -3g_1^2\lambda_6  -9g_2^2\lambda_6\\
+\beta_{7}&=12\lambda_2\lambda_7  +6\lambda_3\lambda_6  +6\lambda_3\lambda_7  +4\lambda_4\lambda_6  +8\lambda_4\lambda_7  +2\lambda_5\lambda_6  +10\lambda_5\lambda_7 \nonumber\\
+&\quad +2\lambda_9\lambda_{10}  +3y_t^2\lambda_7  -3g_1^2\lambda_7  -9g_2^2\lambda_7\\
+\beta_{8}&=6\lambda_1\lambda_8  +4\lambda_3\lambda_9  +2\lambda_4\lambda_9  +12\lambda_6\lambda_{10}  +4\lambda_8^2  +8\lambda_8\lambda_h  +4\lambda_{10}^2 \nonumber\\
+&\quad +6y_t^2\lambda_8  -\tfrac{15}{2}g_1^2\lambda_8  -\tfrac{9}{2}g_2^2\lambda_8  +3g_1^4\\
+\beta_{9}&=6\lambda_2\lambda_9  +4\lambda_3\lambda_8  +2\lambda_4\lambda_8  +12\lambda_7\lambda_{10}  +4\lambda_9^2  +8\lambda_9\lambda_h  +4\lambda_{10}^2 \nonumber\\
+&\quad -\tfrac{15}{2}g_1^2\lambda_9  -\tfrac{9}{2}g_2^2\lambda_9  +3g_1^4\\
+\beta_{{10}}&=2\lambda_3\lambda_{10}  +4\lambda_4\lambda_{10}  +6\lambda_5\lambda_{10}  +6\lambda_6\lambda_8  +6\lambda_7\lambda_9  +4\lambda_8\lambda_{10}  +4\lambda_9\lambda_{10} \nonumber\\
+&\quad +8\lambda_{10}\lambda_h  +3y_t^2\lambda_{10}  -\tfrac{15}{2}g_1^2\lambda_{10}  -\tfrac{9}{2}g_2^2\lambda_{10}\\
+\beta_{h}&=2\lambda_8^2  +2\lambda_9^2  +4\lambda_{10}^2  +20\lambda_h^2  -12g_1^2\lambda_h  +6g_1^4
+\end{align}
+in the normalisation of Eq.~(1) with real couplings and $g_1$ the hypercharge coupling. The two-doublet parts agree with the standard results; the terms in $\lambda_8,\lambda_9,\lambda_{10},\lambda_h$ come from the charged singlet.
+
+\section{Loop functions for $b\to s\gamma$}\label{app:bsg}
+With $y=m_t^2/m_{h_i^+}^2$ and $w_1=\cos\varphi$, $w_2=\sin\varphi$,
+\begin{align}
+C_{7,8}&=\sum_{i=1,2}w_i^2\tan^2\beta\Big[\tfrac13F^{(1)}_{7,8}(y_i)-F^{(2)}_{7,8}(y_i)\Big],\nonumber\\
+F_7^{(1)}(y)&=\frac{y(7-5y-8y^2)}{24(y-1)^3}+\frac{y^2(3y-2)}{4(y-1)^4}\ln y,\qquad
+F_7^{(2)}(y)=\frac{y(3-5y)}{12(y-1)^2}+\frac{y(3y-2)}{6(y-1)^3}\ln y,\nonumber\\
+F_8^{(1)}(y)&=\frac{y(2+5y-y^2)}{8(y-1)^3}-\frac{3y^2}{4(y-1)^4}\ln y,\qquad
+F_8^{(2)}(y)=\frac{y(3-y)}{4(y-1)^2}-\frac{y}{2(y-1)^3}\ln y,
+\end{align}
+evaluated at $\mu_0=160$~GeV with $m_t(\mu_0)=163$~GeV and inserted in $\Br(B\to X_s\gamma)\times10^4=3.36-8.22\,C_7-1.99\,C_8$~\cite{Misiak:2017woa}.
+
 \section{Code and reproducibility}
 All scripts, tests and the final sample (\texttt{figures/final\_sample.csv}) are in the repository; the figures are produced by \texttt{gate1/figures.py}. The unit tests run with \texttt{ZEE\_INPUTS=hg pytest tests}. \todo{archive on Zenodo and cite DOI}
 
