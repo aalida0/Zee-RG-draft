@@ -1,0 +1,136 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx,booktabs,xcolor,siunitx}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\newcommand{\todo}[1]{{\color{red}[TODO: #1]}}
+\newcommand{\Br}{\mathrm{Br}}
+\newcommand{\tb}{\tan\beta}
+\sisetup{exponent-product=\times,range-phrase=--,range-units=single}
+\title{Global fit of the general Zee model after MEG~II and DESI:\\ stability-corrected predictions for charged-lepton flavour violation}
+\author{Fey \\ \small \todo{affiliation, co-authors, e-mail}}
+\date{\today\ --- \textbf{working draft}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We revisit the Zee model of radiative neutrino masses with a general Yukawa structure, dropping the $(g-2)_\mu$ and $W$-mass anomalies as motivations and imposing current data: NuFIT~6.1 oscillation parameters, the MEG~II limit on $\mu\to e\gamma$, Belle~II $\tau$ limits, ATLAS $h\to\mu\tau$, lepton universality, electroweak precision observables, and the cosmological and KATRIN neutrino-mass bounds. Working on the slice of parameter space of Herrero-Garc\'ia et al.\ extended by a free quartic coupling $\lambda_4$, we find that normal ordering is preferred over inverted ordering by $\Delta\chi^2\simeq 19$ (a number driven by the $\Lambda$CDM-dependent DESI bound on $\sum m_\nu$). The allowed region predicts $\Br(\tau\to\mu\gamma)$ up to $\sim\!10^{-8}$, $\Br(h\to\tau\mu)$ up to $\sim\!1.5\times10^{-3}$ and $\Br(\mu\to e\gamma)$ up to the MEG~II limit. A one-loop renormalisation-group analysis of the scalar sector shows that the boundedness-from-below and perturbativity conditions used in earlier work are incomplete: only about half of the allowed points are stable up to $10^4$~GeV and only a few percent up to $10^8$~GeV. We map the surviving region onto the reach of MEG~II, Mu3e, Mu2e/COMET and Belle~II.
+\end{abstract}
+
+\section{Introduction}
+The Zee model~\cite{Zee:1980ai} generates Majorana neutrino masses at one loop by adding a second Higgs doublet and a charged $SU(2)_L$-singlet scalar. Its general form, with unrestricted Yukawa couplings of both doublets, was analysed in detail by Herrero-Garc\'ia, Ohlsson, Riad and Wirén (HG)~\cite{HerreroGarcia:2017xdq}, who found that normal ordering is favoured and that the model predicts charged-lepton flavour violation (CLFV) within reach of upcoming experiments. Since then, MEG~II has improved the $\mu\to e\gamma$ bound to $1.5\times10^{-13}$~\cite{Meg2:2025todo}, the muon $g-2$ discrepancy has disappeared in the latest Standard-Model evaluation~\cite{Aliberti:2025beg}, NuFIT has been updated~\cite{Esteban:2024eli}, and cosmology now limits $\sum m_\nu$ below $0.1$~eV in $\Lambda$CDM. \todo{verify and cite the Heeck--Thapa Zee-model analysis and other post-2017 Zee fits; state precisely what is new relative to them}
+
+Our aims are (i) to update the global fit with current data and without anomaly-driven inputs, (ii) to check how robust the allowed region is under renormalisation-group (RG) evolution of the scalar quartics, and (iii) to map the region onto the sensitivities of future CLFV experiments. We stay on the HG slice of Yukawa textures and extend it by a free $\lambda_4$; relaxing the textures is left to future work (Sec.~\ref{sec:disc}).
+
+\section{Model and parameter slice}\label{sec:model}
+In the Higgs basis the fields are $H_1=(G^+,(v+h+iG^0)/\sqrt2)$, $H_2=(H^+,(H+iA)/\sqrt2)$ and the charged singlet $h^+$. We follow the potential of HG,
+\begin{align}
+V &= \mu_1^2|H_1|^2+\mu_2^2|H_2|^2-(\mu_3^2 H_2^\dagger H_1+\text{h.c.})+\tfrac12\lambda_1|H_1|^4+\tfrac12\lambda_2|H_2|^4+\lambda_3|H_1|^2|H_2|^2+\lambda_4|H_1^\dagger H_2|^2\nonumber\\
+&\quad+\big[\tfrac12\lambda_5(H_1^\dagger H_2)^2+(\lambda_6|H_1|^2+\lambda_7|H_2|^2)H_1^\dagger H_2+\text{h.c.}\big]+\mu_h^2|h^+|^2+\lambda_h|h^+|^4\nonumber\\
+&\quad+\lambda_8|h^+|^2|H_1|^2+\lambda_9|h^+|^2|H_2|^2+\big[\lambda_{10}|h^+|^2H_1^\dagger H_2+\text{h.c.}\big]+\big(\mu\,\epsilon\,H_1H_2h^-+\text{h.c.}\big),
+\end{align}
+where the factor $\tfrac12$ multiplies $\lambda_5$ only. The tadpole conditions give $\mu_1^2=-\lambda_1v^2/2$ and $\mu_3^2=\lambda_6v^2/2$. The neutral mass matrix has off-diagonal entry $M_{12}=\lambda_6v^2$, and the pseudoscalar and heavy-scalar masses are
+\begin{equation}
+m_A^2=M_{H^+}^2+\tfrac12(\lambda_4-\lambda_5)v^2,\qquad M_{22}=m_A^2+\lambda_5v^2,
+\end{equation}
+with $M_{H^+}$ the diagonal $H^+$ mass entry; $H^+$ and $h^+$ mix through $\mu$ into mass eigenstates $h_{1,2}^+$ with mixing angle $\phi$. Given the physical spectrum $\lambda_4$ and $\lambda_5$ are fixed, so freeing $\lambda_4$ changes the splitting between the neutral and charged states.
+
+\paragraph{Slice.} Following HG we set $f_{e\mu}=0$, $Y_2^{ee,e\mu,\mu e,\mu\mu}=0$, take $f$ and $Y_2^{e\tau}$ real, put $\lambda_7=\lambda_8=\lambda_9=\lambda_{10}=\lambda_h=0$ in the low-energy fit and fix $\lambda_2=\sqrt{4\pi}$. The new element here is that $\lambda_4$ is a free parameter with $|\lambda_4|\le\sqrt{4\pi}$. The fit has 19 parameters: $f_{e\tau},f_{\mu\tau}$, nine real components of $Y_2$, $\tan\beta$, two mass parameters, the mixing, and $\lambda_3,\lambda_4,\lambda_5,\lambda_6$. The Higgs mass fixes $\lambda_1$.
+
+\section{Observables and inputs}\label{sec:obs}
+\paragraph{Neutrino sector.} Neutrino masses are evaluated at leading order in the Zee loop as in HG, with $f$ and $Y_2$ related to the oscillation parameters through the charged-lepton masses. The oscillation likelihood is the NuFIT~6.1 $\chi^2$ table~\cite{Esteban:2024eli} \todo{state exactly which NuFIT variant (with/without SK atmospheric data) was used}; the lightest-neutrino mass follows from the fit. We add $\sum m_\nu<0.072$~eV (DESI+CMB, $\Lambda$CDM)~\cite{DESI:2025todo} and $m_\beta<0.45$~eV (KATRIN)~\cite{KATRIN:2025todo}. The DESI bound is model dependent; the ordering conclusion depends on it.
+
+\paragraph{CLFV.} The radiative decays are
+\begin{equation}
+\Br(\ell_i\to\ell_j\gamma)=\Br(\ell_i\to\ell_j\nu\bar\nu)\,\frac{48\pi^3\alpha}{G_F^2}\big(|C_L|^2+|C_R|^2\big),
+\end{equation}
+(with the branching ratio factor $=1$ for $\mu\to e\gamma$) where the dipole coefficients include the neutral-scalar loops (Barr--Zee-type functions for the diagonal moments) and the charged-scalar loops with $f$ and $Y_2$. We include $\Br(\tau\to3\mu)$ and $\Br(\tau\to\mu\mu e)$ from tree-level neutral-scalar exchange and the usual dipole terms. For $\mu\to3e$, which vanishes at tree level on this slice since $Y_2^{ee}=Y_2^{\mu e}=0$, we use the dipole-dominated estimate $\Br(\mu\to3e)\simeq\frac{\alpha}{3\pi}\big[\ln(m_\mu^2/m_e^2)-\tfrac{11}{4}\big]\Br(\mu\to e\gamma)$ \todo{cite; validate against a full calculation}. For $\mu$--$e$ conversion we add the dipole-dominance term $\mathrm{CR}(\mu\,\mathrm{Al}\to e\,\mathrm{Al})\supset\frac{\alpha}{3}\Br(\mu\to e\gamma)$ (and $\frac{\alpha}{2}$ for Au)~\cite{Kitano:2002mt} incoherently to the monopole (photon-penguin) term of HG. \todo{validate the monopole formula against HG eqs.~(3.24)--(3.25)} Muonium--antimuonium conversion requires $(Y_2^{e\mu})^2$ at tree level and vanishes on this slice.
+
+\paragraph{Universality and electroweak data.} Charged-scalar exchange modifies $\tau$ decays: with $\epsilon=\sqrt2/\big[G_F(\sin^2\!\phi/m_{h_1^+}^2+\cos^2\!\phi/m_{h_2^+}^2)\big]$ we use $R_{\tau/\mu}=\sqrt{1+\epsilon|f_{e\tau}|^2}$, $R_{\tau/e}=\sqrt{1+\epsilon|f_{\mu\tau}|^2}$ and $R_{\mu/e}=\sqrt{|1+\epsilon(|f_{\mu\tau}|^2-|f_{e\tau}|^2)|}$, compared with HFLAV~2023 values~\cite{HFLAV:2023todo}. The oblique parameters $S,T,U$ use the RPP~2026 fit values and correlations~\cite{PDG:2026todo}. The Higgs signal strengths for the fit use the HG-era values; the post-fit filter uses HiggsTools~\cite{Bahl:2022igd} (HiggsSignals with 159 observables and HiggsBounds for $H$, $A$, with SM-like decays only; the charged scalars are not tested). Perturbativity ($|\lambda_i|\le\sqrt{4\pi}$), positivity of $\lambda_1$ and the HG boundedness conditions enter as penalties. Table~\ref{tab:inputs} lists the main limits.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{llc}\toprule
+Observable & Limit / value & Ref.\\\midrule
+$\Br(\mu\to e\gamma)$ & $<\num{1.5e-13}$ (90\% CL, MEG~II) & \cite{Meg2:2025todo}\\
+$\Br(\tau\to\mu\gamma)$, $\Br(\tau\to e\gamma)$ & $<\num{4.2e-8}$, $<\num{3.3e-8}$ & \todo{cite}\\
+$\Br(\tau\to3\mu)$ & $<\num{1.9e-8}$ (Belle~II) & \todo{cite}\\
+$\mathrm{CR}(\mu\,\mathrm{Au}\to e\,\mathrm{Au})$ & $<\num{7e-13}$ (SINDRUM~II) & \cite{HerreroGarcia:2017xdq}\\
+$\Br(h\to\mu\tau)$, $\Br(h\to e\tau)$ & $<0.18\%$, $<0.20\%$ (ATLAS) & \todo{cite}\\
+$\sum m_\nu$, $m_\beta$ & $<0.072$ eV, $<0.45$ eV & \todo{cite}\\
+$\Delta a_\mu=a_\mu^{\rm exp}-a_\mu^{\rm SM}$ & $(38\pm63)\times10^{-11}$ & \cite{Aliberti:2025beg}\\\bottomrule
+\end{tabular}\caption{Main experimental inputs (modern set).}\label{tab:inputs}\end{table}
+
+\section{Fit procedure}\label{sec:fit}
+Couplings span many orders of magnitude, so we parametrise $f$ and $Y_2$ components as $x=10^{-6}\sinh z$ with $|x|\le0.1$ and minimise the $\chi^2$ with a multi-start least-squares algorithm; hinge terms represent one-sided limits. Starting points include optimiser output from many random starts and samples from nested-sampling runs. The allowed region is the set of points with $\Delta\chi^2\le3.84$ above the minimum, sampled by adaptive random walks started from the best seeds. We report \emph{profile-style} ranges (extremal values over the region). Nested sampling with HG-style log-uniform priors did not converge: two runs with 300 and 800 live points gave log-evidence differing by $4.6$ and a heavy-scalar-mass upper edge that moved from $2.2$ to $3.5$~TeV, indicating a multimodal posterior. We therefore quote no credible intervals and do not compare mass ranges with the Bayesian intervals of HG. \todo{prior-matched, converged sampler (many independent runs on Condor) if credible intervals are wanted}
+
+\section{RG evolution and stability}\label{sec:rg}
+We evolve the Yukawas with the one-loop Machacek--Vaughn equations~\cite{Machacek:1983tz} written for the full scalar and fermion content and verified against the tensor form; in the region of interest the Yukawa running is negligible (all test points remain perturbative to $10^{19}$~GeV and radiatively regenerated texture zeros are $\lesssim2\times10^{-4}$). The quartics are different. The HG choice $\lambda_2=\sqrt{4\pi}$ at the electroweak scale produces a Landau pole near $1$~TeV, and the conditions for boundedness from below (HG's Eqs.~(3.2), (3.3), (3.7)) do not account for the $\lambda_6$ term: many HG-slice points are unbounded at the electroweak scale, which we confirmed by direct numerical minimisation of the quartic form on gauge-orbit representatives.
+
+For each point of the allowed region we therefore search for a UV completion of the \emph{unconstrained} quartics. We draw 400 candidates for $(\lambda_2,\lambda_7,\lambda_8,\lambda_9,\lambda_{10},\lambda_h)$, keep those consistent with the $h\to\gamma\gamma$ rate, and evolve all eleven quartics together with the gauge couplings and $y_t$ using a closed-form one-loop system (agreeing with the full tensor evolution to $\sim1\%$). A point is called stable to scale $\Lambda$ if at least one candidate stays perturbative ($|\lambda_i|<4\pi$) and bounded from below at all scales up to $\Lambda$. This is an existence statement and therefore generous. Gauge and top inputs are rough and two-loop effects are neglected \todo{fix gauge/top boundary values and add a sensitivity test}.
+
+\section{Results}\label{sec:res}
+\paragraph{Ordering.} The lowest $\chi^2$ found is $9.8$ for normal ordering (NO) and $29.1$ for inverted ordering (IO), so IO is disfavoured by $\Delta\chi^2\simeq19$; the gap comes mainly from the DESI $\sum m_\nu$ bound and the oscillation data and would shrink if the cosmological bound were relaxed. The IO region is very narrow: $\Br(\tau\to\mu\gamma)=\numrange{4.6e-9}{1.6e-8}$, $m_A=220$--$440$~GeV, $\tan\beta\simeq0.3$ (the edge of the prior). Below we show NO.
+
+\paragraph{Allowed region (NO).} With $\lambda_4$ free over $|\lambda_4|\le\sqrt{4\pi}$ ($30\%$ of the points have $|\lambda_4|>2$) and after the HiggsSignals ($\Delta\chi^2\le3.84$) and HiggsBounds filters, 548 of 599 sampled points remain. The ranges, for all points and for those stable to $10^4$~GeV, are in Table~\ref{tab:ranges}. The ranges on the pure HG slice are very similar, so freeing $\lambda_4$ does not change the phenomenology. $\Br(\tau\to\mu\gamma)$ reaches $10^{-8}$ and $\Br(\mu\to e\gamma)$ reaches the MEG~II limit; the lightest charged scalar is $\lesssim350$~GeV and $\tan\beta\lesssim0.7$ (Fig.~\ref{fig:mass}).
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lcc}\toprule
+Observable & All & Stable to $10^4$~GeV\\\midrule
+$\Br(\tau\to\mu\gamma)$ & \numrange{2.4e-11}{1.1e-8} & \numrange{2.8e-11}{9.2e-9}\\
+$\Br(\mu\to e\gamma)$ & $\le\num{1.3e-13}$ & $\le\num{1.2e-13}$\\
+$\mathrm{CR}(\mu\,\mathrm{Al}\to e\,\mathrm{Al})$ & $\le\num{2e-15}$ & $\le\num{1.8e-15}$\\
+$\Br(\mu\to3e)$ & $\le\num{7.8e-16}$ & $\le\num{7.1e-16}$\\
+$\Br(h\to\tau\mu)$ & $\le\num{1.5e-3}$ & $\le\num{1.3e-3}$\\
+$m_A$ [TeV] & 0.35--3.4 & 0.35--3.4\\
+$\tan\beta$ & 0.3--0.71 & 0.3--0.71\\\bottomrule
+\end{tabular}\caption{Profile ranges of the NO allowed region with $\lambda_4$ free (600-point sample, 548 after Higgs filters, 311 stable to $10^4$~GeV).}\label{tab:ranges}\end{table}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.48\textwidth]{figures/fig_tau_h.pdf}\hfill
+\includegraphics[width=0.48\textwidth]{figures/fig_mue.pdf}
+\caption{Allowed NO region. Left: $\Br(\tau\to\mu\gamma)$ versus $\Br(h\to\tau\mu)$; solid lines are current limits ($\num{4.2e-8}$, $0.18\%$), dashed lines illustrative future reach ($10^{-9}$, $10^{-4}$). Right: $\Br(\mu\to e\gamma)$ versus $\mathrm{CR}(\mu\,\mathrm{Al}\to e\,\mathrm{Al})$; solid: MEG~II limit, dashed: MEG~II design sensitivity and Mu2e/COMET reach ($10^{-16}$). Grey: unstable below $10^4$~GeV; blue: stable to $10^4$~GeV; red: stable to $10^8$~GeV.}\label{fig:reach}\end{figure}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.48\textwidth]{figures/fig_mass.pdf}\hfill
+\includegraphics[width=0.48\textwidth]{figures/fig_stability.pdf}
+\caption{Left: $m_A$ versus $\tan\beta$ in the allowed region (colours as in Fig.~\ref{fig:reach}). Right: fraction of allowed points stable up to a given scale, with $\lambda_4$ free and on the HG slice ($\lambda_4=0$).}\label{fig:mass}\end{figure}
+
+\paragraph{Stability.} Fig.~\ref{fig:mass} (right) shows the fraction of allowed points that can be bounded from below and perturbative up to a scale $\Lambda$: with $\lambda_4$ free, $62\%$ at the electroweak scale, $55\%$ to $10^4$~GeV, $3.2\%$ to $10^8$~GeV and $0.2\%$ to $10^{16}$~GeV (the HG slice: $32\%$, $32\%$, $2.8\%$, $0.2\%$). Roughly half of the low-energy region is therefore not consistent as an effective theory even up to $10^4$~GeV, and the high-scale fraction is a few percent. The headline LFV ranges are barely affected by the cut (Table~\ref{tab:ranges}), but $\tan\beta$ shrinks to $\lesssim0.46$ and the tails of $m_A$ and of $\Br(h\to\tau\mu)$ are thinned.
+
+\paragraph{Future reach.} Table~\ref{tab:reach} gives the fraction of the allowed region above the reach of future experiments. A large part of the region is beyond all planned probes. $\tau\to3\mu$ is out of reach ($\le6\times10^{-14}$). Phase~I of Mu3e and COMET see none of the region. The $\mu\to3e$ reach is a consequence of the same dipole as $\mu\to e\gamma$ and not an independent probe on this slice.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lccc}\toprule
+Probe & Reach & All [\%] & Stable [\%]\\\midrule
+MEG~II $\mu\to e\gamma$ & \num{6e-14} & 2 & 2\\
+Mu3e (phase II) $\mu\to3e$ & \num{1e-16} & 13 & 9\\
+Mu2e/COMET II, $\mu\,\mathrm{Al}\to e\,\mathrm{Al}$ & \num{1e-16} & 12 & 14\\
+Belle~II $\tau\to\mu\gamma$ & \num{1e-9} & 26 & 21\\
+Belle~II $\tau\to3\mu$ & \num{5e-10} & 0 & 0\\
+$h\to\tau\mu$ & \num{1e-4} & 34 & 21\\\bottomrule
+\end{tabular}\caption{Fraction of the allowed NO region above the reach of future experiments (``Stable'': stable to $10^4$~GeV). Reaches are taken from review summaries \todo{replace with experiment documents}.}\label{tab:reach}\end{table}
+
+\section{Discussion and limitations}\label{sec:disc}
+The following limitations should be read together with the results:
+\begin{itemize}
+\item The fit is performed on the HG texture slice (extended by $\lambda_4$). We do not scan the texture zeros or $f_{e\mu}$, so statements about orderings, octants and textures in the full general model are not made.
+\item Ranges are profile-style from random-walk sampling; credible-interval ranges are not available (Sec.~\ref{sec:fit}). We cannot reproduce the HG mass upper bound of $1.7$~TeV; our profile region reaches $3.4$~TeV because decoupled heavy-doublet points ($c_{\beta\alpha}\to0$) satisfy all constraints.
+\item The RG analysis is one loop with rough gauge and top inputs, and ``stable'' means that a UV completion of the free quartics exists.
+\item The HiggsBounds check covers $H$ and $A$ with SM-like decays only; charged scalars are not tested. The Higgs term in the fit itself is HG-era.
+\item The $\mu$--$e$ conversion monopole term and the $\mu\to3e$ estimate are not validated against full calculations.
+\end{itemize}
+
+\section{Conclusions}
+On the Herrero-Garc\'ia slice, extended by a free $\lambda_4$, the Zee model still allows $\tau\to\mu\gamma$ up to $10^{-8}$, $h\to\tau\mu$ up to $1.5\times10^{-3}$ and $\mu\to e\gamma$ at the MEG~II limit, with normal ordering preferred. The regions of parameter space where these signals are largest are only partly consistent as effective theories: about half of the allowed points are stable to $10^4$~GeV and few percent to $10^8$~GeV. A sizeable fraction of the region lies beyond the reach of every planned experiment, while the largest fractions are covered by Belle~II $\tau\to\mu\gamma$ and by an $h\to\tau\mu$ measurement at the $10^{-4}$ level. The code and results are available at \url{https://github.com/aalida0/Zee-RG}.
+
+\section*{Acknowledgements}\todo{acknowledgements}
+
+\appendix
+\section{Code and reproducibility}
+All scripts, tests and the final sample (\texttt{figures/final\_sample.csv}) are in the repository; the figures are produced by \texttt{gate1/figures.py}. The unit tests run with \texttt{ZEE\_INPUTS=hg pytest tests}. \todo{archive on Zenodo and cite DOI}
+
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+\end{document}
