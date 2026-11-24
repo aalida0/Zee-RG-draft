@@ -93,12 +93,12 @@ Laboratory (no cosmology) & 7.6 & 18.0 & 10.4\\
 Observable & All & Stable to $10^4$~GeV\\\midrule
 $\Br(\tau\to\mu\gamma)$ & \numrange{2.4e-11}{1.1e-8} & \numrange{2.8e-11}{9.2e-9}\\
 $\Br(\mu\to e\gamma)$ & $\le\num{1.3e-13}$ & $\le\num{1.2e-13}$\\
-$\mathrm{CR}(\mu\,\mathrm{Al}\to e\,\mathrm{Al})$ & $\le\num{2e-15}$ & $\le\num{1.8e-15}$\\
+$\mathrm{CR}(\mu\,\mathrm{Al}\to e\,\mathrm{Al})$ & $\le\num{3.4e-16}$ & $\le\num{3.1e-16}$\\
 $\Br(\mu\to3e)$ & $\le\num{7.8e-16}$ & $\le\num{7.1e-16}$\\
 $\Br(h\to\tau\mu)$ & $\le\num{1.5e-3}$ & $\le\num{1.3e-3}$\\
 $m_A$ [TeV] & 0.35--3.4 & 0.35--3.4\\
 $\tan\beta$ & 0.3--0.71 & 0.3--0.71\\\bottomrule
-\end{tabular}\caption{Profile ranges of the NO allowed region with $\lambda_4$ free (600-point sample, 548 after Higgs filters, 311 stable to $10^4$~GeV).}\label{tab:ranges}\end{table}
+\end{tabular}\caption{Profile ranges of the NO allowed region with $\lambda_4$ free (600-point sample, 548 after Higgs filters, 325 stable to $10^4$~GeV in the targeted search of Sec.~\ref{sec:fit}, see the Stability paragraph).}\label{tab:ranges}\end{table}
 
 \begin{figure}[t]\centering
 \includegraphics[width=0.48\textwidth]{figures/fig_tau_h.pdf}\hfill
@@ -108,24 +108,41 @@ $\tan\beta$ & 0.3--0.71 & 0.3--0.71\\\bottomrule
 \begin{figure}[t]\centering
 \includegraphics[width=0.48\textwidth]{figures/fig_mass.pdf}\hfill
 \includegraphics[width=0.48\textwidth]{figures/fig_stability.pdf}
-\caption{Left: $m_A$ versus $\tan\beta$ in the allowed region (colours as in Fig.~\ref{fig:reach}). Right: fraction of allowed points stable up to a given scale, with $\lambda_4$ free and on the HG slice ($\lambda_4=0$).}\label{fig:mass}\end{figure}
+\caption{Left: $m_A$ versus $\tan\beta$ in the allowed region (colours as in Fig.~\ref{fig:reach}). Right: fraction of allowed points stable up to a given scale, with $\lambda_4$ free, for the targeted search and for the first stage of 100 random draws.}\label{fig:mass}\end{figure}
 
-\paragraph{Stability.} Throughout, ``stable to $\Lambda$'' means that a choice of the unconstrained quartics exists for which the quartic form stays bounded from below and every coupling stays below $4\pi$ up to $\Lambda$ (one-loop evolution, no threshold matching, no perturbative-unitarity test). It does not imply that the electroweak vacuum is the global minimum: the trilinear $\mu$ term can generate charge-breaking minima, which we do not test. Not finding such a choice among $400$ draws does not prove that none exists, so the fractions below are lower bounds on the fraction of points with a UV-consistent quartic sector, and they are fractions of the sampled points, which carry no probability measure. Fig.~\ref{fig:mass} (right) shows the fraction of allowed points that can be bounded from below and perturbative up to a scale $\Lambda$: with $\lambda_4$ free, $62\%$ at the electroweak scale, $55\%$ to $10^4$~GeV, $3.2\%$ to $10^8$~GeV and $0.2\%$ to $10^{16}$~GeV (the HG slice: $32\%$, $32\%$, $2.8\%$, $0.2\%$). Roughly half of the low-energy region is therefore not consistent as an effective theory even up to $10^4$~GeV, and the high-scale fraction is a few percent. Because the random inner search can only underestimate the reach, we repeated it for all $548$ points with a targeted search: 100 random draws followed by 150 steps of adaptive local search on $(\lambda_2,\lambda_7,\ldots,\lambda_{10},\lambda_h)$ maximising the cutoff, with boundedness tested by the exact elimination of the $h^+$ direction described above (the two tests agree on every random point and on the $\lambda_1$ boundary of $60$ random potentials) and with the top coupling $\rho_t$ included. The optimised fractions are $59\%$, $5.7\%$, $1.5\%$ and $0.4\%$ to $10^4$, $10^8$, $10^{12}$ and $10^{16}$~GeV, against $45\%$, $0.7\%$, $0\%$, $0\%$ for the 100 random draws alone. The search is a lower bound on the true maximal cutoff, so these are still lower bounds on the fraction of points with a UV-consistent quartic sector, and they still count sampled points without a probability measure. Table~\ref{tab:ranges} and Fig.~\ref{fig:reach} use the earlier random-search flag. The headline LFV ranges are barely affected by the cut (Table~\ref{tab:ranges}), but $\tan\beta$ shrinks to $\lesssim0.46$ and the tails of $m_A$ and of $\Br(h\to\tau\mu)$ are thinned.
+\paragraph{Stability.} Throughout, ``stable to $\Lambda$'' means that a choice of the unconstrained quartics exists for which the quartic form stays bounded from below and every coupling stays below $4\pi$ up to $\Lambda$ (one-loop evolution, no threshold matching, no perturbative-unitarity test). It does not imply that the electroweak vacuum is the global minimum: the trilinear $\mu$ term can generate charge-breaking minima, which we do not test. Not finding such a choice among $400$ draws does not prove that none exists, so the fractions below are lower bounds on the fraction of points with a UV-consistent quartic sector, and they are fractions of the sampled points, which carry no probability measure. Fig.~\ref{fig:mass} (right) shows the fraction of allowed points that can be bounded from below and perturbative up to a scale $\Lambda$. With only the first stage, 100 random draws of the free quartics, $61\%$, $45\%$, $0.7\%$ and $0\%$ of the points reach $10^3$, $10^4$, $10^8$ and $10^{16}$~GeV. Because a random search can only underestimate the reach, we add a targeted search for all $548$ points: 100 random draws followed by 150 steps of adaptive local search on $(\lambda_2,\lambda_7,\ldots,\lambda_{10},\lambda_h)$ maximising the cutoff, with boundedness tested by the exact elimination of the $h^+$ direction described above (the two tests agree on every random point and on the $\lambda_1$ boundary of $60$ random potentials) and with the top coupling $\rho_t$ included. The optimised fractions are $70\%$, $59\%$, $5.7\%$, $1.5\%$ and $0.4\%$ to $10^3$, $10^4$, $10^8$, $10^{12}$ and $10^{16}$~GeV ($325$ of $548$ points stable to $10^4$~GeV, $31$ to $10^8$~GeV). The stable fractions on the pure HG slice were computed only with the random search ($32\%$, $2.8\%$ and $0.2\%$ to $10^4$, $10^8$ and $10^{16}$~GeV) and are not comparable. The search is a lower bound on the true maximal cutoff, so these are still lower bounds on the fraction of points with a UV-consistent quartic sector, and they still count sampled points without a probability measure. Table~\ref{tab:ranges}, Table~\ref{tab:reach} and the figures use the targeted-search flag. The stability cut leaves the ranges of $\tan\beta$ ($0.3$--$0.71$) and $m_A$ unchanged and lowers the upper ends of the LFV rates by about $10\%$; the $\Br(h\to\tau\mu)$ reach fraction drops from $34\%$ to $21\%$.
 
-\paragraph{Future reach.} Table~\ref{tab:reach} gives the fraction of the allowed region above the reach of future experiments. About $11\%$ of the sampled region lies above the Mu2e design reach and about $30\%$ above a further order of magnitude ($8\%$ and $23\%$ for the stable subset). The conversion rate adds dipole and monopole terms incoherently; for fully constructive (destructive) interference the two numbers become $13\%$ ($7\%$) and $31\%$ ($24\%$), which brackets the effect of the omitted relative phase; the rest is beyond all planned muon probes. $\tau\to3\mu$ is out of reach ($\le6\times10^{-14}$). Phase~I of Mu3e and COMET see none of the region. The $\mu\to3e$ reach is a consequence of the same dipole as $\mu\to e\gamma$ and not an independent probe on this slice.
+\paragraph{Future reach.} Table~\ref{tab:reach} gives the fraction of the allowed region above the reach of future experiments. About $11\%$ of the sampled region lies above the Mu2e design reach and about $30\%$ above a further order of magnitude ($10\%$ and $25\%$ for the stable subset). The conversion rate adds dipole and monopole terms incoherently; for fully constructive (destructive) interference the two numbers become $13\%$ ($7\%$) and $31\%$ ($24\%$), which brackets the effect of the omitted relative phase; the rest is beyond all planned muon probes. $\tau\to3\mu$ is out of reach ($\le6\times10^{-14}$). Phase~I of Mu3e and COMET see none of the region. The $\mu\to3e$ reach is a consequence of the same dipole as $\mu\to e\gamma$ and not an independent probe on this slice.
 
 \begin{table}[t]\centering\small
 \begin{tabular}{lccc}\toprule
 Probe & Reach & All [\%] & Stable [\%]\\\midrule
 MEG~II $\mu\to e\gamma$ (design) & \num{6e-14} & 2 & 2\\
-Mu3e (phase II) $\mu\to3e$ & \num{1e-16} & 13 & 9\\
+Mu3e (phase II) $\mu\to3e$ & \num{1e-16} & 13 & 10\\
 Mu2e Run~I, $\mu\,\mathrm{Al}\to e\,\mathrm{Al}$ & \num{6.2e-16} & 0 & 0\\
-Mu2e design, $\mu\,\mathrm{Al}\to e\,\mathrm{Al}$ & \num{6.1e-17} & 11 & 8\\
-Mu2e Run~II class (order of magnitude better) & \num{6e-18} & 30 & 23\\
-Belle~II $\tau\to\mu\gamma$ & \num{1e-9} & 26 & 21\\
+Mu2e design, $\mu\,\mathrm{Al}\to e\,\mathrm{Al}$ & \num{6.1e-17} & 11 & 10\\
+Mu2e Run~II class (order of magnitude better) & \num{6e-18} & 30 & 25\\
+Belle~II $\tau\to\mu\gamma$ & \num{1e-9} & 26 & 23\\
 Belle~II $\tau\to3\mu$ & \num{5e-10} & 0 & 0\\
 $h\to\tau\mu$ & \num{1e-4} & 34 & 21\\\bottomrule
 \end{tabular}\caption{Fraction of the allowed NO region above the reach of future experiments (``Stable'': stable to $10^4$~GeV). Muon-sector reaches are 90\%~CL sensitivities from the experiment documents: MEG~II~\cite{Cattaneo:2019meg}, Mu3e~phase~II (requires a new beamline)~\cite{Calibbi:2017uvl}, Mu2e~\cite{Mu2e:2022ggl,Mu2e:2022runI}; the COMET~II single-event sensitivity ($3\times10^{-17}$~\cite{COMET:2015}) lies between the last two Mu2e rows. The $\tau$ and Higgs rows come from review summaries \cite{Snowmass:2022clfv,EPPSU:2025}; \todo{replace Belle~II $\tau$ and HL-LHC $h\to\tau\mu$ reaches with the collaboration documents}.}\label{tab:reach}\end{table}
+
+\paragraph{Cutoff-dependent envelopes.} Requiring the quartic sector to remain consistent up to a minimum cutoff $\Lambda_{\min}$ restricts the LFV rates. Table~\ref{tab:env} and Fig.~\ref{fig:env} give the largest value of each observable among the sampled points whose optimised cutoff exceeds $\Lambda_{\min}$. Up to $10^6$~GeV the envelopes are those of the full region. At $10^8$~GeV the maximal $\Br(\mu\to e\gamma)$ and $\mathrm{CR}(\mu\,\mathrm{Al}\to e\,\mathrm{Al})$ fall by a factor $5$ and $6$ to $2.3\times10^{-14}$ and $6.1\times10^{-17}$, the last number coinciding with the Mu2e design reach, and $\Br(h\to\tau\mu)$ falls by a factor $37$. For $\Lambda_{\min}\ge10^{10}$~GeV the muon-sector rates are at most $10^{-16}$ for $\mu\to e\gamma$ and $3\times10^{-19}$ for conversion, out of reach of all planned experiments, while $\Br(\tau\to\mu\gamma)$ stays at $7\times10^{-10}$, below the Belle~II reach quoted in Table~\ref{tab:reach}. These are lower bounds on the true envelopes: the sample was not conditioned on stability, so only $31$, $12$ and $2$ points lie above $10^8$, $10^{10}$ and $10^{16}$~GeV, and a dedicated search for the largest rate at fixed $\Lambda_{\min}$ could raise the high-cutoff rows.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lcccccc}\toprule
+$\Lambda_{\min}$ [GeV] & Points & $\Br(\tau\to\mu\gamma)$ & $\Br(\mu\to e\gamma)$ & CR(Al) & $\Br(h\to\tau\mu)$\\\midrule
+none & 548 & \num{1.1e-8} & \num{1.3e-13} & \num{3.4e-16} & \num{1.5e-3}\\
+$10^3$ & 381 & \num{1.1e-8} & \num{1.3e-13} & \num{3.4e-16} & \num{1.3e-3}\\
+$10^4$ & 325 & \num{9.2e-9} & \num{1.2e-13} & \num{3.1e-16} & \num{1.3e-3}\\
+$10^8$ & 31 & \num{7.6e-9} & \num{2.3e-14} & \num{6.1e-17} & \num{3.6e-5}\\
+$10^{10}$ & 12 & \num{6.9e-10} & \num{1.2e-16} & \num{3.2e-19} & \num{3.6e-5}\\
+$10^{12}$ & 8 & \num{6.9e-10} & \num{1.2e-16} & \num{3.2e-19} & \num{1.8e-5}\\
+$10^{16}$ & 2 & \num{6.5e-10} & \num{1.2e-16} & \num{3.2e-19} & \num{1.8e-5}\\\bottomrule
+\end{tabular}\caption{Largest values of the observables among sampled points that can be stable up to $\Lambda_{\min}$ (targeted search). Sample-limited lower bounds on the envelopes.}\label{tab:env}\end{table}
+
+\begin{figure}[t]\centering\includegraphics[width=0.85\textwidth]{figures/fig_envelope.pdf}
+\caption{Envelopes of Table~\ref{tab:env}. Solid lines: current limits; dashed lines: future reach used in Table~\ref{tab:reach}.}\label{fig:env}\end{figure}
 
 \section{Discussion and limitations}\label{sec:disc}
 The following limitations should be read together with the results:
