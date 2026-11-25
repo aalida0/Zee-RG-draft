@@ -333,8 +333,68 @@ With $t=\ln\mu$, $16\pi^2\,d\lambda_i/dt=\beta_i$, real couplings, the potential
 \end{align}
 These expressions were generated with PyR@TE~3~\cite{Sartore:2020gou} from the model file in the repository and agree with our implementation to $6\times10^{-13}$ (Sec.~\ref{sec:rg}). In addition $16\pi^2\,dy_t/dt=y_t[\tfrac92(y_t^2+\rho_t^2)-8g_3^2-\tfrac94g_2^2-\tfrac{17}{12}g_1^2]$ and the same equation holds for $\rho_t$ with $y_t\leftrightarrow\rho_t$, so that $\rho_t/y_t$ is constant at one loop.
 
+\section{Validation and robustness summary}\label{app:val}
+This appendix collects, in one place, the checks behind the statements of the main text, with what was and was not done. Files refer to the repository.
+
+\paragraph{Independent check of the $H^\pm W^\mp\gamma$ set.} We compare the diagonal $\Delta a_\mu$ of our complete dipole code (all one-loop terms and all Barr--Zee sets, SM Higgs subtracted) with GM2Calc~2~\cite{Athron:2021evk}, which includes the full two-loop contribution of the aligned two-Higgs-doublet model, for exact alignment, $\tan\beta=1$, $\lambda_{6,7}=0$, $M^2=M_{H^\pm}^2$, $\varsigma_u=\varsigma_d=-1$ and $\varsigma_\ell=30$ (GM2Calc Yukawa type 5; the Yukawa conventions are the aligned ones of $\varsigma_u$, $\varsigma_d$, $\varsigma_\ell$ with the pseudoscalar couplings $-\varsigma_u$, $+\varsigma_{d,\ell}$ used in the code). Table~\ref{tab:gm2} shows that the code with the nominal set reproduces GM2Calc to $2$--$10\%$, while reversing the sign or removing the set is excluded; the $\varsigma_u$, $\varsigma_\ell$ dependence (the contribution is $\propto\varsigma_u\varsigma_\ell$, checked for $(\varsigma_u,\varsigma_\ell)=(-1,30),(-1,-30),(-2,20),(-0.5,60)$) agree at the same level over $32$ configurations (\texttt{results/gm2calc\_check.json}). GM2Calc's own scheme choice (running couplings in the 2HDM) moves its result by $+7\%$ at $M_{H^\pm}=200$~GeV, which is the size of the residual. The check fixes sign, normalisation and mass dependence of the $t$--$b$ set (the other two sets vanish at exact alignment); it does not test the off-diagonal entries, which follow from the flavour structure (the operator is $\bar\ell_{L,J}\sigma F D_{JI}\ell_{R,I}$ with a flavour-universal coefficient), nor sets (5) and (6) for $c_{\beta-\alpha}\neq0$, which change $\Br(\tau\to\mu\gamma)$ by less than $5\%$ at the benchmarks. The gate still requires all limits for $0,\pm1$ times the whole set.
+\begin{table*}[t]
+\centering
+\caption{$\Delta a_\mu$ ($10^{-9}$) of GM2Calc~2 and of our code with the $H^\pm W^\mp\gamma$ set multiplied by $s=+1$ (nominal), $0$ and $-1$ for the configuration of the text ($m_H$, $m_A$ in GeV).}\label{tab:gm2}
+\begin{tabular}{lrrrrr}
+\hline
+$(M_{H^\pm},m_H,m_A)$ & GM2Calc & $s=+1$ & ratio & $s=0$ & $s=-1$\\
+\hline
+$(90,150,170)$ & $1.576$ & $1.430$ & $0.91$ & $0.917$ & $0.404$\\
+$(200,250,250)$ & $1.106$ & $1.043$ & $0.94$ & $0.680$ & $0.317$\\
+$(300,300,300)$ & $0.910$ & $0.873$ & $0.96$ & $0.590$ & $0.307$\\
+$(400,420,430)$ & $0.680$ & $0.667$ & $0.98$ & $0.438$ & $0.209$\\
+\hline
+\end{tabular}
+\end{table*}
+
+\paragraph{Reference of the acceptance statements.} The acceptance limit is $\chi^2_{\min}+3.84$ with the minimum of the fit over the stated domain. Table~\ref{tab:ref} lists the refit minima for the variants of the free quartics ($\lambda_{7,8,10}$) and of the cosmological bound, each from a multi-start fit (63 starts, normal ordering) with the production statistic, and the resulting margins of the benchmarks ($\chi^2=13.03$ for BM1, $13.34$ for BM2; with the DESI-DR2 bound $13.79$ and $14.10$). The benchmarks are inside the acceptance region for every reference.
+\begin{table*}[t]
+\centering
+\caption{Refit minima and benchmark margins $\chi^2_{\min}+3.84-\chi^2$.}\label{tab:ref}
+\begin{tabular}{lccc}
+\hline
+Reference & $\chi^2_{\min}$ & BM1 & BM2\\
+\hline
+$|\lambda_{7,8,10}|\le3$ (fit, box edge) & $9.98$ & $0.79$ & $0.48$\\
+$|\lambda_{7,8,10}|\le1$ & $10.72$ & $1.53$ & $1.23$\\
+$|\lambda_{7,8,10}|\le0.75$ & $10.86$ & $1.67$ & $1.36$\\
+DESI-DR2, $\sum m_\nu<0.0642$~eV, $|\lambda|\le3$ & $10.74$ & $0.79$ & $0.48$\\
+\hline
+\end{tabular}
+\end{table*}
+
+\paragraph{Exact boundedness reduction.} The reduction of Sec.~\ref{sec:rg} (\texttt{zee/bfb1d.py}, tests in \texttt{tests/test\_bfb1d.py}) reproduces the margins of both benchmarks and the grid verdict on $300$ random quartic sets, including the corner $\lambda_h=0$ (there the conditions $V_2\ge0$, $\lambda_8,\lambda_9\ge0$, $\lambda_8\lambda_9\ge\lambda_{10}^2$ are imposed). Two bugs found while developing it (the sign of the $B<0$ branch and the treatment of empty intervals) are fixed and covered by tests.
+
+\paragraph{Spectrum-consistent boundary perturbation.} The variants \texttt{spec\_x1.01}, \texttt{spec\_x0.99}, \texttt{spec\_x1.02}, \texttt{spec\_x0.98} of \texttt{gate2/cert.py} shift $M_{H^\pm}$ with $m_H$, $m_A$, $m_h$ fixed and re-solve $\lambda_4$ (\texttt{bench.spec\_shift}); they are sensitivities, not part of the minimum. Regenerated benchmark records give: BM1, $10^{2.8}$ (BFB violated) for $+1\%$ and $+2\%$, $10^{11.07}$ for $-1\%$, $10^{9.57}$ for $-2\%$; BM2, $10^{2.8}$, $10^{2.8}$, $10^{9.52}$ and $10^{7.47}$ (the value $10^{2.8}$ is the lowest scale of the grid: boundedness is already violated at the matching scale).
+
+\paragraph{Charged-scalar widths and Higgs data.} An earlier version scaled the HiggsTools charged-scalar branching ratios incorrectly (\texttt{setTotalWidth} does not rescale the branching ratios, so the $h_2^+$ rates were $1.27$ times too large); the code now sets the branching ratios explicitly (\texttt{setBr}) and the test of HiggsTools against the standalone widths has an absolute tolerance of $10^{-6}$. The HiggsSignals reference is the Standard-Model-like value $153.72$ of the same $159$ observables. The $\lambda_1$ root of the Higgs-basis relations is guarded against a vanishing denominator (a degenerate case is penalised, not divided by).
+
+\paragraph{Campaign starts and pilot.} The campaign of Sec.~\ref{sec:res} starts from the five points of Table~\ref{tab:starts}, each passing the staged gate (all cuts except the cutoff; \texttt{results/campaign\_starts.json}, built by \texttt{gate2/make\_starts.py}). Of $120$ random deformations of the benchmarks only $3$ passed ($115$ failed on $\chi^2$, $2$ on numerical errors); the three new starts have smaller coarse scales than the benchmarks and are used as starts, not as benchmarks. A local pilot of six chains (every chain mode, four starts) ran without failures; it measured $0.1$~s per proposal including the gate, which set the chain length to $8000$ proposals, and the collector re-verified $82$ stored points with the full gate. The pilot on the worker nodes (20 chains) and the 2000-chain campaign are not yet run; no statement about mixing or region-wide ranges is made, and convergence is to be judged by split $\hat R$ and effective sample size per start.
+\begin{table*}[t]
+\centering\small
+\caption{Starting points of the campaign (masses in GeV; nominal branching ratios of $\tau\to\mu\gamma$ and $\mu\to e\gamma$).}\label{tab:starts}
+\begin{tabular}{lrrrrrcc}
+\hline
+Start & $m_{h_1^+}$ & $m_H$ & $m_A$ & $\tan\beta$ & $\chi^2$ & $\Br_{\tau\mu\gamma}$ & $\Br_{\mu e\gamma}$\\
+\hline
+BM1 & $612$ & $652$ & $629$ & $0.431$ & $13.03$ & $9.1\times10^{-9}$ & $8.5\times10^{-14}$\\
+BM2 & $573$ & $868$ & $871$ & $0.429$ & $13.34$ & $5.4\times10^{-9}$ & $1.6\times10^{-15}$\\
+S3 & $506$ & $712$ & $730$ & $0.414$ & $12.81$ & $6.1\times10^{-9}$ & $1.7\times10^{-14}$\\
+S4 & $427$ & $1249$ & $1252$ & $0.434$ & $13.43$ & $2.5\times10^{-9}$ & $2.0\times10^{-16}$\\
+S5 & $490$ & $780$ & $761$ & $0.467$ & $13.59$ & $5.5\times10^{-9}$ & $7.6\times10^{-15}$\\
+\hline
+\end{tabular}
+\end{table*}
+
+\paragraph{Items not done.} The following remain open and are listed so that no claim rests on them: a coherent $\mu\to e$ conversion calculation with the non-dipole terms; the order-$\lambda Y^2$ and bottom/tau Yukawa terms of the quartic $\beta$ functions on the scan domain; a computed charged-scalar pair rate in the Drell--Yan range above $500$~GeV; threshold corrections to the matching; the pilot on the worker nodes and the campaign itself; an independent numerical check of sets (5) and (6) of the $H^\pm W^\mp\gamma$ amplitude away from alignment and of the off-diagonal entries; and a converged Bayesian sampler.
+
 \section{Code and reproducibility}
-The benchmark records (\texttt{results/benchmarks.json}), the acceptance gate (\texttt{gate2/accept.py}), the table and figure scripts (\texttt{gate2/make\_table.py}, \texttt{gate2/fig\_traj.py}) and the tests are in the repository. The unit tests run with \texttt{ZEE\_INPUTS=modern pytest tests}; the $\beta$-function comparison is \texttt{validation/compare\_pyrate.py}.
+The comparison with GM2Calc is \texttt{gate2/check\_gm2calc.py} (needs a local GM2Calc build) and the refits are \texttt{gate2/refit\_hw.py} with the environment variables \texttt{ETA\_BOX}, \texttt{ZEE\_SUMM\_LIMIT} and \texttt{TAG}; the campaign and its Condor scripts are in \texttt{gate2/campaign.py} and \texttt{condor/}, with the code and data hashes of each run stored in its records. The benchmark records (\texttt{results/benchmarks.json}), the acceptance gate (\texttt{gate2/accept.py}), the table and figure scripts (\texttt{gate2/make\_table.py}, \texttt{gate2/fig\_traj.py}) and the tests are in the repository. The unit tests run with \texttt{ZEE\_INPUTS=modern pytest tests}; the $\beta$-function comparison is \texttt{validation/compare\_pyrate.py}.
 
 \bibliographystyle{spphys}
 \bibliography{refs}
